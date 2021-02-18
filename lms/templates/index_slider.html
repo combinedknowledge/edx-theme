@@ -1,0 +1,68 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangoapps.site_configuration import helpers
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<!--
+  Slider modes:
+  class = 'slider'                    - common background image
+  class = 'slider slider-separate'    - separate backgrounds for each slide
+-->
+<header class="slider">
+  <div class="outer-wrapper">
+    <div class="title">
+      <div class="heading-group">
+        % if homepage_overlay_html:
+          ${homepage_overlay_html | n, decode.utf8}
+        % else:
+          <mark>Slide #1</mark>
+          <h1>${Text(_("Welcome to {platform_name}")).format(platform_name=helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))}</h1>
+          <p>${Text(_("It works! Powered by Open edX{registered_trademark}")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</p>
+        % endif
+      </div>
+      % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+        <div class="course-search">
+          <form method="get" action="/courses">
+            <label><span class="sr">${_("Search for a course")}</span>
+              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+            </label>
+            <button class="search-button" type="submit">
+              <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+            </button>
+          </form>
+        </div>
+      % endif
+    </div>
+    <%include file="index_promo_video.html" />
+  </div>
+  <div class="outer-wrapper">
+    <div class="title">
+      <div class="heading-group">
+        % if homepage_overlay_html:
+          ${homepage_overlay_html | n, decode.utf8}
+        % else:
+          <mark>Slide #2</mark>
+          <h1>${Text(_(u"Welcome to {platform_name}")).format(platform_name=settings.PLATFORM_NAME)}</h1>
+          <p>${Text(_("It works! Powered by Open edX{registered_trademark}")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</p>
+        % endif
+      </div>
+      % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+        <div class="course-search">
+          <form method="get" action="/courses">
+            <label><span class="sr">${_("Search for a course")}</span>
+              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+            </label>
+            <button class="search-button" type="submit">
+              <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+            </button>
+          </form>
+        </div>
+      % endif
+    </div>
+    <%include file="index_promo_video.html" />
+  </div>
+</header>
+<script src="${static.url('js/slider.js')}"></script>

@@ -1,0 +1,101 @@
+.course-wrapper {
+    div.timed-exam,
+    div.proctored-exam {
+        button:hover {
+            text-shadow: none;
+        }
+
+        .btn-secondary {
+            border-color: $base-color;
+
+            &:not(:disabled):hover {
+                background-color: $base-color !important;
+            }
+        }
+    }
+
+    #accessible-error-modal {
+        @extend %modal;
+    }
+}
+
+.facephoto.view .wrapper-task {
+    .wrapper-help,
+    #facecam {
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+            float: none;
+        }
+    }
+}
+
+.verification-process {
+    .carousel #wrapper-review .review-task-photos .wrapper-photos {
+        .wrapper-photo {
+            @include media-breakpoint-down(xs) {
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .pay-and-verify,
+    .incourse-reverify,
+    .reverify {
+        .nav-wizard {
+            .prompt-verify,
+            .prompt-verify .title.verification-process .pay-and-verify .nav-wizard .prompt-verify {
+                .title {
+                    @include media-breakpoint-down(sm) {
+                        max-width: 100%;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.proctored_exam_status {
+    &.is-fixed {
+        z-index: 1001;
+        max-width: 1170px;
+        width: calc(100% - 30px);
+    }
+
+    .exam-timer {
+        @include media-breakpoint-down(xs) {
+            padding: 15px;
+        }
+
+        .exam-text {
+            @include media-breakpoint-down(xs) {
+                width: 100%;
+            }
+
+            a {
+                color: $link-color;
+
+                &:hover {
+                    color: $link-hover;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #turn_in_exam_id {
+            @include media-breakpoint-down(xs) {
+                margin-top: 0;
+                float: none;
+            }
+
+            .exam-button-turn-in-exam,
+            .exam-timer-clock {
+                @include media-breakpoint-down(xs) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}

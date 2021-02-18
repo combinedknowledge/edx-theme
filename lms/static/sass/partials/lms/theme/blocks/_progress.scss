@@ -1,0 +1,85 @@
+.view-progress #course-info-progress {
+    .wrapper-msg.wrapper-auto-cert .auto-cert-message {
+        .has-actions .msg-actions .btn {
+            font-size: 13px;
+            line-height: 23.68px;
+            box-shadow: none;
+        }
+
+        .has-actions {
+            .msg-content {
+                margin-right: 0;
+            }
+
+            .msg-content,
+            .msg-actions {
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                }
+            }
+
+            .msg-actions {
+                @include media-breakpoint-down(sm) {
+                    text-align: left;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .progress-certificates-title {
+        word-wrap: break-word;
+    }
+
+    > .chapters > section {
+        display: flex;
+
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+
+        .hd,
+        .sections {
+            word-break: break-word;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                padding-right: 0;
+                display: block;
+                border-right: none;
+            }
+        }
+
+        .sections > div {
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            .scores {
+                dt {
+                    @include media-breakpoint-down(sm) {
+                        width: 100%;
+                    }
+                }
+
+                dd {
+                    @include media-breakpoint-down(sm) {
+                        margin-right: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+            .hd.hd-4 {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+    .grade-detail-graph {
+        @include media-breakpoint-down(md) {
+            margin-left: -25px;
+        }
+    }
+}

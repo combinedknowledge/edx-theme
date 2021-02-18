@@ -1,0 +1,130 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "label": "phone",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "small-phone",
+      "width": 320,
+      "height": 480
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Course [home]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Fcourse%2F",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [content]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Fcourseware%2Fgraded_interactions%2Fsimulations%2F?child=first",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [discussion]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Fdiscussion%2Fforum%2F",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [wiki]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Fcourse_wiki",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [progress]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Fprogress",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][course_info]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-course_info",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][membership]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-course_info",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][cohort_management]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-cohort_management",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][extensions]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-extensions",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][student_admin]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-student_admin",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][data_download]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-data_download",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][send_email]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-send_email",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][certificates]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-certificates",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course [instructor][open_response_assessment]",
+      "url": "http://localhost:18000/login?next=%2Fcourses%2Fcourse-v1%3AedX%2BDemoX%2BDemo_Course%2Finstructor#view-open_response_assessment",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"],
+    "ignoreDefaultArgs": ["--disable-extensions"]
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 100,
+  "debug": false,
+  "debugWindow": false
+}

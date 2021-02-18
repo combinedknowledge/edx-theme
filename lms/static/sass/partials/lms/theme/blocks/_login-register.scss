@@ -1,0 +1,72 @@
+.login-register-content {
+    margin-top: 0;
+    background: transparent;
+
+    @include only-for-IE {
+        display: block;
+    }
+}
+
+.login-register {
+    background: $body-bg;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 0;
+
+    .message-copy {
+        word-break: break-word;
+    }
+
+    .form-wrapper {
+        background: $white;
+        padding: 20px;
+    }
+
+    .form-field {
+        &.select-gender,
+        &.select-year_of_birth {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        label.focus-out,
+        input.focus-out,
+        select.focus-out,
+        textarea.focus-out {
+            @include media-breakpoint-down(xs) {
+                position: static;
+                padding: 0;
+                opacity: 1;
+            }
+        }
+    }
+
+    .nav-btn {
+        height: auto;
+    }
+
+    .paragon__btn {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+    .section-title.lines {
+        margin: 20px 0 15px;
+        text-align: left;
+
+        &:after {
+            display: none;
+        }
+
+        .text {
+            padding: 0;
+            font-size: 24px;
+        }
+    }
+
+    .paragon__form-control {
+        border-color: $gray-600;
+    }
+}

@@ -1,0 +1,228 @@
+.courses-container {
+    .home & {
+        @extend %container;
+
+        max-width: 1230px;
+    }
+
+    .courses-more .courses-more-cta {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .find-courses & {
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    .highlighted-courses {
+        @include clearfix();
+
+        padding-top: 45px;
+        margin-bottom: 20px;
+    }
+
+    .courses {
+        .find-courses & {
+            @include media-breakpoint-down(sm) {
+                order: 4;
+            }
+
+            &:not(.no-course-discovery) {
+                @include media-breakpoint-down(xs) {
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .courses-listing {
+            .home & {
+                padding: 0 15px;
+                overflow: hidden;
+            }
+
+            .find-courses & .courses-listing-item {
+                margin-top: 0;
+            }
+
+            .course {
+                background: $white;
+                border-bottom-color: $base-color2;
+
+                &:hover,
+                &:focus {
+                    background: $white;
+
+                    .cover-image:before {
+                        opacity: .8;
+                    }
+                }
+
+                .course-info {
+                    .course-title {
+                        color: #1f1f1f;
+                        font-size: 14px;
+                        margin: 5px 0;
+                        height: 96px;
+                        overflow: hidden;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        word-break: break-word;
+                    }
+
+                    .course-organization,
+                    .course-code,
+                    .course-date {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .cover-image {
+                    &:before,
+                    .learn-more {
+                        transition: all .25s ease;
+                    }
+
+                    .learn-more {
+                        border: 3px solid $white;
+                        background: none;
+                        line-height: 45px;
+                    }
+                }
+            }
+        }
+
+        .course .course-info {
+            padding: 0;
+        }
+    }
+
+    .wrapper-search-context {
+        word-break: break-word;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+
+        .search-status-label,
+        .wrapper-search-input {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        .search-status-label {
+            line-height: normal;
+        }
+    }
+
+    aside.search-facets {
+        &.phone-menu {
+            overflow: hidden;
+            margin: 30px 0 0;
+        }
+
+        .name {
+            display: inline-block;
+            max-width: calc(100% - 35px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: normal;
+        }
+
+        .facet-option {
+            &:hover,
+            &:focus {
+                background: $base-color;
+            }
+
+            &.selected {
+                &:hover,
+                &:focus {
+                    background: $blue2;
+                    color: $white;
+
+                    .count:before {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .toggle button {
+            color: $base-color;
+
+            &:hover,
+            &:focus {
+                color: $blue2;
+            }
+        }
+    }
+
+    .courses-more {
+        margin-right: 0;
+        text-align: center;
+        clear: both;
+
+        a {
+            color: $white;
+            background: $base-color;
+            border-radius: 2px;
+            padding: 8px 25px;
+            font-size: 14px;
+            display: inline-block;
+            line-height: 20px;
+
+            &:after {
+                display: none;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                background: $m-blue-l1;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .filters {
+        max-height: initial;
+
+        .facet-option {
+            word-break: break-word;
+            transition: all .25s ease-out;
+
+            &:hover,
+            &:focus {
+                color: $blue2;
+            }
+        }
+    }
+}
+
+.find-courses,
+.university-profile {
+    background: $body-bg;
+
+    .courses-container {
+        padding: 40px 0 0;
+    }
+}
+
+main.course-outline .block-tree .section {
+    max-width: 100%;
+    margin: 0;
+}
+
+.course-wrapper .course-content {
+    background: $white;
+}

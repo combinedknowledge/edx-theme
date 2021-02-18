@@ -1,0 +1,34 @@
+// Extra rules needed for an LMS theme
+//
+// The _extras.scss file is imported after all other rules by
+// the LMS Sass. For your own theme, you can override this file
+// to add any custom rules that you need. You can also import
+// partials directly into this file so that you can break your
+// rules into modular pieces.
+
+@import "./global";
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/about";
+@import "./blocks/course-main";
+@import "./blocks/course-list";
+@import "./blocks/dashboard";
+@import "./blocks/discussion";
+@import "./blocks/form-elements";
+@import "./blocks/fullscreen-button";
+@import "./blocks/instructor";
+@import "./blocks/login-register";
+@import "./blocks/proctoring";
+@import "./blocks/notes";
+@import "./blocks/profile";
+@import "./blocks/account";
+@import "./blocks/progress";
+@import "./blocks/shopping-cart";
+@import "./blocks/slider";
+@import "./blocks/sysadmin";
+@import "./blocks/textblock";
+@import "./blocks/wiki";
+@import "./blocks/teams";
+@import "./blocks/programs";
+@import "./blocks/static-page";
+@import "./custom/override";

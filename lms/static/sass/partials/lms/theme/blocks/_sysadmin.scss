@@ -1,0 +1,43 @@
+.sysadmin-dashboard-wrapper {
+    padding: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    word-break: break-all;
+
+    .instructor-nav a {
+        display: inline-block;
+        padding: 5px 0;
+
+        &.active-section {
+            color: $black;
+        }
+    }
+
+    .form-actions button {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    table.stat_table {
+        width: 100%;
+    }
+
+    .list-input {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 10px;
+
+        li {
+            padding-bottom: 1.2em;
+
+            input:not([type="checkbox"]) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangoapps.site_configuration import helpers
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<%def name="html_data()"><%
+data = {
+  "footerIcons": {
+    "facebook": {
+      "href": "#",
+      "src": "ico-facebook"
+    },
+    "twitter": {
+        "href": "#",
+        "src": "ico-twitter"
+    },
+    "instagram": {
+        "href": "#",
+        "src": "ico-instagram"
+    },
+    "linkedin": {
+        "href": "#",
+        "src": "ico-linkedin"
+    },
+    "youtube": {
+        "href": "#",
+        "src": "ico-youtube"
+    },
+    "odnoklassniki": {
+        "href": "#",
+        "src": "ico-odnoklassniki"
+    },
+    "vimeo": {
+        "href": "#",
+        "src": "ico-vimeo"
+    },
+    "vk": {
+        "href": "#",
+        "src": "ico-vk"
+    },
+    "behance": {
+        "href": "#",
+        "src": "ico-behance"
+    },
+    "google-plus": {
+        "href": "#",
+        "src": "ico-google-plus"
+    },
+  },
+  "footerLinks": {
+    "about": {
+      "url": "/about",
+      "text": Text(_('About')),
+      "target_blank": False
+    },
+    "privacy": {
+      "url": "/privacy",
+      "text": Text(_('Privacy Policy')),
+      "target_blank": False
+    },
+    "terms": {
+      "url": "/tos",
+      "text": Text(_('Terms of Service')),
+      "target_blank": False
+    },
+    "contact_us": {
+      "url": "/support/contact_us",
+      "text": Text(_('Contact Us')),
+      "target_blank": False
+    }
+  },
+  "banner": {
+    "title": Text(_("Welcome to {platform_name}")).format(
+        platform_name=helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
+    ),
+    "description": Text(_("It works! Powered by Open edX{registered_trademark}")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))
+  },
+  "site_variable": settings.FEATURES.get('BASE_JUNIPER_SITE_THEME', settings.DEFAULT_SITE_THEME),
+  "header_logo": "logo.svg",
+  "footer_logo": "logo-footer.svg",
+  "certificate_logo": "logo-certificate.svg"
+}
+return data
+%></%def>

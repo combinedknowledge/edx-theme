@@ -1,0 +1,99 @@
+//@include media-breakpoint-down(xs) { color: red}        //  (max-width: 575px)
+//@include media-breakpoint-down(sm) { color: green}      //  (max-width: 767px)
+//@include media-breakpoint-down(md) { color: blue}       //  (max-width: 991px)
+//@include media-breakpoint-down(lg) { color: orange}     //  (max-width: 1199px)
+//
+//@include media-breakpoint-up(sm) { color: silver;}      //  (min-width: 576px)
+//@include media-breakpoint-up(md) { color: purple;}      //  (min-width: 768px)
+//@include media-breakpoint-up(lg) { color: pink;}        //  (min-width: 992px)
+//@include media-breakpoint-up(xl) { color: lime;}        //  (min-width: 1200px)
+
+%container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+html[class] {
+    font-size: 16px;
+}
+
+html,
+body[class] {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    height: 100%;
+    line-height: 1.2;
+    margin: 0;
+    font-family: $font-family-sans-serif !important;
+}
+
+#content {
+    @extend %container;
+
+    flex: 1 1 auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 60px;
+
+    .course-info .container {
+        @media (max-width: 991px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .home &,
+    .view-profile & {
+        max-width: 1920px;
+        padding: 0;
+    }
+
+    .home & {
+        padding-bottom: 40px;
+    }
+}
+
+.window-wrap {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.wrapper-preview-menu {
+    width: 100%;
+}
+
+@include only-for-IE {
+    body {
+        display: flex;
+    }
+
+    body,
+    .window-wrap {
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        min-height: 100vh;
+    }
+
+    .wrapper-footer {
+        overflow: hidden;
+    }
+}
+
+%modal {
+    box-sizing: border-box;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    overflow: auto;
+}
