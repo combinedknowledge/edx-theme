@@ -1,0 +1,11 @@
+*.css
+lms/static/css/*
+lms/static/.sass-cache/
+.DS_Store
+lms/static/config.rb
+
+.idea/
+
+backstop_data/bitmaps_test/
+backstop_data/html_report/
+backstop_data/ci_report/

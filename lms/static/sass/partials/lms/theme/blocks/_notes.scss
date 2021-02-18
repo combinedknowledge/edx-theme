@@ -1,0 +1,139 @@
+body.view-student-notes {
+    .container {
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .wrapper-student-notes .student-notes {
+        padding: 20px;
+    }
+
+    .note-group .note {
+        word-break: break-word;
+
+        .wrapper-note-excerpts,
+        .reference {
+            @media (max-width: 991px) {
+                width: 100%;
+            }
+        }
+
+        .reference {
+            @media (max-width: 991px) {
+                margin-top: 10px;
+            }
+
+            .wrapper-reference-content {
+                @media (max-width: 991px) {
+                    padding: 0;
+                }
+            }
+        }
+
+        .wrapper-note-excerpts .note-excerpt-more-link {
+            border: none;
+            box-shadow: none;
+            text-shadow: none;
+        }
+    }
+
+    .title-search-container {
+        .wrapper-title,
+        .wrapper-notes-search {
+            @media (max-width: 767px) {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .wrapper-notes-search {
+            @media (max-width: 767px) {
+                margin-top: 10px;
+            }
+        }
+
+        .search-notes-input {
+            padding: 8px 15px;
+            font-weight: 400;
+
+            @media (max-width: 767px) {
+                margin-left: -6px;
+            }
+        }
+
+        .search-notes-submit {
+            text-shadow: none;
+        }
+    }
+
+    .wrapper-tabs .tab-list {
+        .tabs {
+            @media (max-width: 767px) {
+                display: flex;
+                max-width: 100%;
+                overflow: auto;
+            }
+        }
+
+        .tabs-label {
+            padding: 10px;
+        }
+
+        .tab {
+            flex-shrink: 0;
+
+            .tab-label {
+                margin-bottom: 5px;
+            }
+
+            &.is-active .action-close {
+                line-height: 15px;
+                margin-bottom: 3px;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .pagination.pagination-full {
+        width: 100%;
+        text-align: center;
+
+        .current-page,
+        .page-number-input,
+        .total-pages {
+            width: 35px;
+        }
+
+        .nav-link:focus {
+            border: none;
+        }
+    }
+}
+
+.edx-notes-wrapper {
+    .annotator-wrapper.annotator-wrapper .annotator-outer.annotator-viewer .annotator-controls button {
+        &:hover,
+        &:focus {
+            box-shadow: none;
+            text-shadow: none;
+            opacity: .7;
+        }
+    }
+
+    .annotator-adder button:hover {
+        text-shadow: none;
+    }
+
+    .annotator-viewer .annotator-widget.annotator-listing {
+        @media (max-width: 767px) {
+            min-width: 200px;
+        }
+
+        @media (max-width: 600px) {
+            min-width: 150px;
+        }
+    }
+}

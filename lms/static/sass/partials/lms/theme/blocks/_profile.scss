@@ -1,0 +1,92 @@
+.view-profile {
+    .profile {
+        word-break: break-word;
+
+        .wrapper-profile-field-account-privacy {
+            padding: 0 15px;
+            display: block;
+
+            .u-field {
+                @extend %container;
+
+                display: block;
+                padding: 15px 0;
+            }
+
+            .u-field-title,
+            .u-field-value,
+            .u-field-account_privacy .btn-change-privacy {
+                vertical-align: middle;
+            }
+
+            .u-field-title {
+                margin-right: 10px;
+                -webkit-font-smoothing: auto;
+                -moz-osx-font-smoothing: auto;
+            }
+
+            .u-field-value {
+                margin-left: 0;
+            }
+
+            .u-field-account_privacy {
+                @include media-breakpoint-down(sm) {
+                    display: block;
+                    max-width: 100%;
+                }
+
+                .btn-change-privacy {
+                    padding: 6px 20px;
+                    line-height: 20px;
+                    font-size: 15px;
+                }
+            }
+
+            .wrapper-profile-records {
+                @extend %container;
+
+                display: block;
+
+                button {
+                    @include simple($base-color);
+
+                    margin-bottom: 15px;
+
+                    @include media-breakpoint-down(sm) {
+                        margin-top: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+
+        .wrapper-profile-section-one {
+            border: 2px solid $base-color;
+        }
+
+        .certificate-card .card-logo {
+            flex-shrink: 0;
+        }
+
+        .profile-header,
+        .wrapper-profile-sections {
+            @extend %container;
+
+            padding: 20px 15px 0;
+        }
+
+        .wrapper-profile-sections {
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+
+        .wrapper-profile-section-container-two .profile-private-message {
+            line-height: normal;
+            padding-left: 0;
+        }
+    }
+
+    .wrapper-profile {
+        background: $body-bg;
+    }
+}

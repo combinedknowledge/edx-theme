@@ -1,0 +1,126 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "label": "phone",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "small-phone",
+      "width": 320,
+      "height": 480
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "http://localhost:18000/",
+      "referenceUrl": "",
+      "postInteractionWait": 2000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Homepage [header menu]",
+      "url": "http://localhost:18000/",
+      "referenceUrl": "",
+      "postInteractionWait": 2000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Course about page",
+      "url": "http://localhost:18000/courses/course-v1:edX+DemoX+Demo_Course/about",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Courses page",
+      "url": "http://localhost:18000/courses/",
+      "referenceUrl": "",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Courses page [search]",
+      "url": "http://localhost:18000/courses?search_query=demo",
+      "referenceUrl": "",
+      "postInteractionWait": 3000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Courses page [facet options]",
+      "url": "http://localhost:18000/courses",
+      "referenceUrl": "",
+      "postInteractionWait": 2000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Login",
+      "url": "http://localhost:18000/login",
+      "referenceUrl": "",
+      "postInteractionWait": 2000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Register",
+      "url": "http://localhost:18000/register",
+      "referenceUrl": "",
+      "postInteractionWait": 2000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Dashboard",
+      "url": "http://localhost:18000/login?next=/dashboard",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Profile",
+      "url": "http://localhost:18000/login?next=/u/edx",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Account setting",
+      "url": "http://localhost:18000/login?next=/account/settings",
+      "referenceUrl": "",
+      "postInteractionWait": 4000,
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Programs",
+      "url": "http://localhost:18000/login?next=/dashboard/programs/",
+      "referenceUrl": "",
+      "misMatchThreshold" : 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"],
+    "ignoreDefaultArgs": ["--disable-extensions"]
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 100,
+  "debug": false,
+  "debugWindow": false
+}

@@ -1,0 +1,60 @@
+// brand color
+$base-color: #0075b4;
+$base-color2: $base-color;
+
+// logo
+$header-logo-height: 45px;
+$footer-logo-height: $header-logo-height;
+$certificate-logo-height: $header-logo-height;
+
+// settings for header
+$header-bg: #fff;
+$header-nav-link-color: $base-color;
+$header-nav-link-color-hover: darken($header-nav-link-color, 20%);
+$header-vertical-padding: 30px;
+
+// settings for footer
+$footer-bg: #2a374a;
+$footer-nav-link-color: #fff;
+$footer-nav-link-color-hover: darken($footer-nav-link-color, 20%);
+$footer-support-text-and-logo: #fff;
+$footer-social-link-bg: #44b759;
+$footer-social-link-bg-hover: lighten($footer-social-link-bg, 20%);
+
+// certificate
+$ribbon-corners-color: lighten($base-color, 1%);
+$ribbon-triangle-color: darken($base-color, 4%);
+$certificate-borders-color: $base-color;
+$ribbon-corners-color: lighten($base-color, 1%);
+$ribbon-triangle-color: darken($base-color, 4%);
+$certificate-borders-color: lighten($base-color, 8%);
+
+// general color variables
+$theme-colors: ( "primary": $base-color, "inverse": #fffefe );  // main stack of colors
+$blue: $base-color;                                             // general platform color
+$blue2: lighten($base-color, 10%);                              // color for buttons on shopping card
+$link-color: lighten($base-color, 10%);                         // general link color
+$link-hover: darken($base-color, 20%);                          // :hover general link color
+$m-blue-l1: lighten($blue, 20%);                                // :hover search for btn on main page
+$m-blue-d1: darken($blue, 3%);                                  // border-color for search btn on main page
+$m-blue-d3: darken($blue, 10%);                                 // border-color for course card on main page
+$m-blue-d4: darken($blue, 13%);                                 // box-shadow for "view my records" button on the profile
+$m-blue-d5: lighten($blue, 10%);                                // background-color for search btn on main page
+$m-blue-d6: darken($blue, 3%);                                  // border search btn on search page
+$uxpl-blue-hover-active: darken($base-color, 7%);               // blue primary button
+$forum-color-primary: $blue;                                    // btn color for discussion block
+$forum-color-hover: darken($blue, 8%);                          // btn background-color for discussion block
+$staff-color: #c2387d;                                          // color for staff btn in course content
+$courseware-border-bottom-color: lighten($base-color, 21%);     // border-color for course cards
+$button-archive-color: #eee;                                    // base common `grey` variable
+$body-bg: #f5f5f5;                                              // body background color
+
+// fonts
+/* stylelint-disable */
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;  // base font family
+$font-family-serif: $font-family-sans-serif;
+$georgia: $font-family-sans-serif;
+
+@import "mixin";
+@import "custom/variables";
+@import "edx-bootstrap/sass/open-edx/theme";

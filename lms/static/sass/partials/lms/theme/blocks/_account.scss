@@ -1,0 +1,72 @@
+.wrapper-account-settings {
+    .account-settings-container {
+        padding: 15px;
+    }
+
+    .wrapper-header .account-nav {
+        overflow: auto;
+        max-width: 100%;
+    }
+}
+
+.account-settings-sections .section {
+    margin: 0;
+
+    .account-settings-section-body {
+        .u-field {
+            .field select {
+                padding: 12px 30px 12px 15px;
+
+                ~ .icon-caret-down:after {
+                    .rtl & {
+                        right: auto;
+                        left: 10px;
+                    }
+                }
+            }
+
+            &.u-field-social {
+                @include media-breakpoint-down(sm) {
+                    width: calc(50% - 25px);
+                }
+
+                @include media-breakpoint-down(xs) {
+                    width: 100%;
+                    margin-right: 0;
+                }
+
+                .u-field-value {
+                    @include media-breakpoint-down(md) {
+                        width: calc(100% - 20px);
+                    }
+                }
+            }
+
+            &.u-field-username {
+                .field {
+                    @media (max-width: 991px) {
+                        width: 100%;
+                    }
+                }
+
+                .u-field-value {
+                    width: 100%;
+                    font-size: 20px;
+                    word-break: break-word;
+                }
+            }
+
+            .field {
+                .u-field-value,
+                .field-label {
+                    white-space: normal;
+                }
+            }
+        }
+
+        .u-field-order-orderId .u-field-order {
+            max-width: 100%;
+            overflow: auto;
+        }
+    }
+}

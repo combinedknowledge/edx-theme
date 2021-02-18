@@ -1,0 +1,71 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.urls import reverse
+  from django.utils.translation import ugettext as _
+  from lms.djangoapps.branding.api import get_footer
+  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
+
+<%namespace name='static' file='static_content.html'/>
+<%namespace name='theme_config' file='theme_config.html'/>
+
+<footer class="wrapper wrapper-footer">
+  <div class="holder">
+    <nav>
+      <ul class="footer-nav-list">
+        % for link in theme_config.html_data()['footerLinks']:
+            <li class="footer-nav-item">
+              <a href="${theme_config.html_data()['footerLinks'][link]['url']}" class="footer-nav-link"
+                 ${"target=_blank" if theme_config.html_data()['footerLinks'][link]['target_blank'] else ''} >
+                ${theme_config.html_data()['footerLinks'][link]['text']}
+              </a>
+            </li>
+          % endfor
+      </ul>
+    </nav>
+    <div class="footer-holder">
+      <ul class="footer-social-list">
+        % for icon in theme_config.html_data()['footerIcons']:
+            <li class="footer-social-item">
+              <a href="${theme_config.html_data()['footerIcons'][icon]['href']}" target="_blank" class="icon-list_link">
+                <svg class="footer-social-icon" viewBox="0 0 35 35">
+                  <use xlink:href="#${theme_config.html_data()['footerIcons'][icon]['src']}" />
+                </svg>
+              </a>
+            </li>
+          % endfor
+      </ul>
+      <a class="footer-logo" href="/">
+        <img
+            src="/static/${theme_config.html_data()['site_variable']}/images/${theme_config.html_data()['footer_logo']}"
+            alt='${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}'
+        >
+      </a>
+      <p class="footer-support">
+        Built on
+        <a target="_blank" href="https://open.edx.org/">
+          <svg class="svg-edx"  viewBox="0 0 100 70"><use xlink:href="#logo-edx" /></svg>
+        </a>
+        by RACCOONGANG
+        <a target="_blank" href="https://raccoongang.com/">
+          <svg class="svg-raccoon"  viewBox="0 0 100 100"><use xlink:href="#logo-raccoon" /></svg>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif

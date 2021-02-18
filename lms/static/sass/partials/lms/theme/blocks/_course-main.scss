@@ -1,0 +1,365 @@
+#course-container {
+    box-sizing: border-box;
+    word-break: break-word;
+    background: $white;
+
+    .page-header,
+    .page-content {
+        padding: 20px;
+
+        .page-header-search {
+            max-width: 100%;
+
+            @include media-breakpoint-down(xs) {
+                margin-right: 0;
+            }
+
+            .search-form {
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+                display: flex;
+            }
+
+            .search-field,
+            .search-button {
+                line-height: 20px;
+                box-sizing: border-box;
+                font-weight: 400;
+                min-width: 100px;
+
+                @include media-breakpoint-down(xs) {
+                    min-width: auto;
+                }
+            }
+
+            .search-field,
+            .search-input {
+                &::placeholder,
+                &:-ms-input-placeholder {
+                    font-weight: 400;
+                    color: #d8d8d8;
+                    opacity: 1;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $uxpl-blue-hover-active;
+                }
+            }
+
+            .search-button {
+                border-color: $base-color;
+                color: $base-color;
+                flex-shrink: 0;
+
+                &:hover,
+                &:focus,
+                &.is-hovered,
+                &.is-focused {
+                    color: $white;
+                    border-color: $uxpl-blue-hover-active;
+                    background: $uxpl-blue-hover-active;
+                }
+            }
+        }
+    }
+
+    #course-outline-block-tree {
+        .outline-item {
+            margin: 0;
+        }
+
+        .accordion-trigger {
+            position: relative;
+            padding-right: 35px;
+
+            .fa-chevron-right {
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &.fa-rotate-90 {
+                    transform: translateY(-50%) rotate(90deg);
+                }
+
+                .rtl & {
+                    transform: translateY(-50%) rotate(180deg);
+
+                    &.fa-rotate-90 {
+                        transform: translateY(-50%) rotate(-90deg);
+                    }
+                }
+            }
+        }
+
+        .outline-button {
+            position: relative;
+            padding-right: 35px;
+            padding-left: 20px;
+
+            &.accordion-trigger {
+                padding-left: 40px;
+            }
+
+            .section-title {
+                padding-left: 0;
+            }
+
+            .complete-checkmark {
+                font-size: 16px;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+            }
+        }
+    }
+}
+
+.has-breadcrumbs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a:not(.btn) {
+        &:hover,
+        &:focus {
+            text-decoration: underline !important;
+        }
+
+        &,
+        &:visited {
+            color: $base-color;
+
+            &:hover {
+                color: $uxpl-blue-hover-active;
+            }
+        }
+    }
+}
+
+.staff-modal,
+.history-modal,
+.sga-block .modal.staff-modal {
+    @extend %modal;
+}
+
+.search-results {
+    .result-link,
+    .result-excerpt,
+    .search-load-next {
+        color: $link-color;
+    }
+
+    .search-load-next {
+        padding: 0 10px;
+        text-align: center;
+    }
+}
+
+.course-bookmarks .bookmarks-results-list .bookmarks-results-list-item {
+    color: $link-color;
+
+    &:hover {
+        text-decoration: none;
+        border-color: $link-hover;
+        color: $link-hover;
+    }
+
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:before,
+    .list-item-left-section .list-item-breadcrumbtrail,
+    .bookmarks-results-list-item {
+        color: inherit;
+    }
+}
+
+.xblock.xmodule_display {
+    #sequence-list li button {
+        overflow: hidden;
+    }
+
+    &.xmodule_HtmlBlock {
+        img {
+            max-width: 100%;
+
+            @include media-breakpoint-down(sm) {
+                display: block;
+                margin: 0 auto 10px;
+                float: none;
+            }
+        }
+
+        #periodic-table-wrapper {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        @include only-for-IE {
+            .zooming-image-place .loupe img {
+                max-width: 100%;
+                width: 1080px;
+            }
+        }
+
+        #headerDiv,
+        #contentDiv {
+            @include clearfix();
+
+            max-width: 100%;
+        }
+
+        #headerDiv a {
+            margin: 0 5px;
+
+            &:hover,
+            &:focus {
+                color: $link-hover;
+            }
+        }
+    }
+
+    &.xmodule_VideoBlock .video {
+        .video-wrapper {
+            @include media-breakpoint-down(sm) {
+                margin: 0 auto 15px;
+                width: 100%;
+            }
+
+            .video-player {
+                @include media-breakpoint-down(sm) {
+                    min-height: 150px;
+                }
+            }
+
+            .video-player-pre,
+            .video-player-post {
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+        }
+
+        .subtitles {
+            @include media-breakpoint-down(sm) {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    &.xmodule_ProblemBlock .problem {
+        .imageinput + div,
+        .wrapper-problem-response {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .wrapper-problem-response center {
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+                margin: 0;
+                border: none;
+            }
+        }
+
+        .inputtype.option-input {
+            margin-top: 0;
+        }
+
+        button.btn-default:hover {
+            background: $link-hover;
+        }
+
+        .rtl & .capa_inputtype.imageinput [id^="answer_"] {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.xmodule_SequenceModule .sequence-nav-button {
+        color: #333;
+
+        &:hover {
+            color: $base-color;
+
+            @include media-breakpoint-down(xs) {
+                color: $white;
+            }
+        }
+
+        .icon {
+            color: inherit !important;
+        }
+    }
+
+    .xblock-student_view-openassessment .openassessment .openassessment__steps__step .step__status {
+        @include media-breakpoint-down(sm) {
+            display: inline-block;
+        }
+    }
+
+    &.xmodule_StaticTabBlock {
+        word-break: break-word;
+    }
+}
+
+.section-update-message,
+.all-updates {
+    word-break: break-word;
+}
+
+.page-banner,
+#course-container {
+    .enroll-btn {
+        border: none;
+        padding: 0;
+    }
+}
+
+.page-banner {
+    width: 100%;
+    max-width: calc(100% - 40px);
+
+    .user-messages-ul li .alert.alert-warning .message-content .enroll-btn.btn-link {
+        color: $link-color;
+    }
+}
+
+.wrap-instructor-info {
+    .content-wrapper &,
+    .view-progress #course-info-progress & {
+        @include media-breakpoint-down(sm) {
+            @include clearfix();
+
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+
+    a.instructor-info-action:not(.btn) {
+        text-transform: none;
+        color: $staff-color;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+
+        &:visited,
+        &:focus {
+            color: $staff-color;
+        }
+
+        &:hover,
+        &:visited:hover {
+            color: $white;
+        }
+    }
+}

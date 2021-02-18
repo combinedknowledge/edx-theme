@@ -1,0 +1,689 @@
+.view-instructordash {
+    .instructor-dashboard-content-2 {
+        padding: 20px;
+        word-break: break-word;
+
+        textarea {
+            display: block;
+            width: 100% !important;
+
+            &#notes,
+            &#certificate-invalidation-notes {
+                min-height: 100px;
+            }
+        }
+
+        table {
+            width: 100%;
+        }
+
+        textarea,
+        input:not(#browseBtn-bulk-csv) {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            max-width: 100%;
+            overflow: hidden;
+            display: inline-block;
+            white-space: normal;
+        }
+
+        button.btn-blue,
+        input.btn-blue:not([type="button"]) {
+            @include simple($base-color);
+
+            font-weight: 700;
+            border-radius: 3px;
+            line-height: 1.3;
+            font-size: .8125em;
+        }
+
+        .btn-blue,
+        input[type="button"],
+        button:not(.btn-link) {
+            margin: 10px 0;
+        }
+
+        .instructor-nav .nav-item .btn-link {
+            border-bottom: 3px solid transparent;
+
+            &:hover,
+            &:focus {
+                color: $base-color;
+                text-decoration: none !important;
+            }
+        }
+
+        .mce-btn {
+            border-radius: 3px;
+
+            button:not(:disabled) {
+                margin: 0;
+                border: none;
+                border-radius: 3px;
+
+                &:hover {
+                    box-shadow: inset 0 1px 0 0 #fefefe;
+                    background: #e4e4e4 linear-gradient(#e4e4e4, #d1c9c9);
+                    text-shadow: none;
+                    color: #626b73;
+                }
+
+                &:focus {
+                    box-shadow: inset 0 0 8px 4px #cac2c2, inset 0 0 8px 4px #cac2c2;
+                }
+            }
+        }
+
+        ul li:not(.nav-item) {
+            margin-bottom: 5px;
+        }
+
+        #bulk-white-list-exception-form .customBrowseBtn {
+            display: block;
+            width: auto;
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 400px) {
+                width: 248px;
+            }
+
+            .enhanced-input-file {
+                @media screen and (max-width: 600px) {
+                    width: 100%;
+                }
+            }
+
+            .file-browse {
+                height: 30px;
+                background: transparent !important;
+                width: auto;
+
+                @media screen and (max-width: 600px) {
+                    width: calc(100% + 5px);
+                }
+
+                .browse {
+                    position: relative;
+                    z-index: 10;
+                    pointer-events: none;
+                    padding: 6px 10px;
+                    float: right;
+                    white-space: nowrap;
+                    width: auto;
+
+                    @media screen and (max-width: 400px) {
+                        margin-left: 181px;
+                    }
+                }
+
+                .file_field {
+                    height: 100%;
+                    width: 431px;
+                    left: -95px;
+                    padding-top: 1px;
+
+                    &::-ms-browse {
+                        display: none;
+                    }
+
+                    @include only-for-FF {
+                        left: -86px;
+                    }
+
+                    @include only-for-IE {
+                        height: 40px;
+                        margin-top: -6px;
+                        display: inline-block;
+                    }
+
+                    @include only-for-EDGE {
+                        padding-left: 5px;
+                        padding-top: 0;
+                        width: 100%;
+                        left: 0;
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        width: 410px;
+                        top: 0;
+                        left: -227px;
+                    }
+                }
+            }
+        }
+
+        .customBrowseBtn + .upload-csv-button {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-bottom: 0 !important;
+        }
+
+        section.idash-section#membership {
+            .member-lists-management .auth-list-container .member-list-widget .bottom-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+
+                label {
+                    margin: 0;
+                }
+
+                input[type="button"].add {
+                    position: static;
+                }
+
+                .add-field {
+                    min-width: 225px;
+                }
+
+                label,
+                label input,
+                input[type="button"].add {
+                    display: inline-block;
+                    margin: 5px 0;
+
+                    @include media-breakpoint-down(xs) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .member-lists-management-ccx .auth-list-container .member-list-widget input.add[type="button"] {
+                position: relative;
+                margin: 0;
+                right: auto;
+            }
+        }
+
+        section.idash-section#discussions_management {
+            .division-scheme-container .two-column-layout {
+                @include media-breakpoint-down(sm) {
+                    max-width: 100%;
+                    margin-bottom: 10px;
+                    padding: 0;
+                }
+            }
+
+            .form-actions .form-submit {
+                line-height: 1.3;
+                font-size: .8125em;
+            }
+        }
+
+        section.idash-section#certificates {
+            .white-listed-students,
+            .invalidation-history,
+            .certificate-generation-history-content {
+                table {
+                    table-layout: auto;
+
+                    @include media-breakpoint-down(sm) {
+                        max-width: 100%;
+                        display: block;
+                        overflow-x: auto;
+                    }
+
+                    thead,
+                    tbody {
+                        @include media-breakpoint-down(sm) {
+                            overflow: auto;
+                            word-break: normal;
+                        }
+                    }
+
+                    tr {
+                        td,
+                        th {
+                            border: 1px solid #e4e4e4;
+
+                            button.delete-exception {
+                                min-width: 160px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .certificate-generation-history-content table {
+                th {
+                    white-space: nowrap;
+                    background-color: #f1f1f1;
+                    padding: 15px 10px;
+                    vertical-align: middle;
+                    text-align: left;
+                    color: $gray-600;
+                    font-size: 12px;
+                    line-height: 17.76px;
+                }
+
+                tbody {
+                    box-shadow: 0 2px 2px rgba($black, .1);
+                    border: 1px solid #e4e4e4;
+                    background: $white;
+
+                    tr td {
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .add-certificate-invalidation {
+                label {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                div {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        section.idash-section#open_response_assessment .open-response-assessment {
+            max-width: 100%;
+            overflow-x: auto;
+
+            .ora-summary-title {
+                color: $base-color;
+            }
+
+            .backgrid {
+                .total,
+                .name,
+                .parent_name {
+                    @include media-breakpoint-down(lg) {
+                        width: 150px;
+                        white-space: normal;
+                    }
+                }
+            }
+
+            .uri-cell {
+                @include media-breakpoint-down(lg) {
+                    white-space: normal;
+                }
+            }
+        }
+
+        section.idash-section#cohort_management {
+            .wrapper-tabs .tab.is-selected .toggle-button {
+                margin: 10px 10px 0 0;
+
+                &:hover {
+                    text-shadow: none;
+                }
+            }
+
+            .cohort-management-settings .form-cancel {
+                padding: 8px 17px;
+                margin: 10px 10px 0 0;
+            }
+
+            .has-other-input-text {
+                max-width: 100%;
+            }
+
+            .cohort-management-nav {
+                .cohort-management-nav-form {
+                    @include media-breakpoint-down(xs) {
+                        width: 100%;
+                    }
+                }
+
+                .action-create {
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        section.idash-section#send_email .list-fields .field ul {
+            padding-left: 10px;
+            width: 30%;
+            vertical-align: top;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                display: block;
+            }
+
+            &.email-targets-secondary {
+                columns: 1;
+            }
+        }
+
+        section.idash-section#data_download .problem-browser input {
+            vertical-align: middle;
+        }
+
+        section.idash-section#course_info .enrollment-wrapper {
+            table {
+                width: 100%;
+                table-layout: auto;
+
+                caption {
+                    padding: 10px;
+                }
+
+                th {
+                    text-align: left;
+                }
+
+                td {
+                    text-align: center;
+                }
+
+                th,
+                td {
+                    padding: 5px 10px;
+                    border: 1px solid #e4e4e4;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        section#extensions {
+            select,
+            input[type="text"] {
+                height: 34px;
+                vertical-align: middle;
+                margin: 5px 0;
+            }
+        }
+
+        section.idash-section#special_exams {
+            h3.ui-accordion-header {
+                padding-left: 30px;
+            }
+
+            .ecommerce-wrapper,
+            .proctoring-wrapper {
+                span.tip {
+                    display: flex;
+                    justify-content: space-between;
+
+                    @include media-breakpoint-down(xs) {
+                        flex-direction: column;
+                    }
+
+                    .add {
+                        float: none;
+
+                        @include media-breakpoint-down(xs) {
+                            display: block;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .top-header {
+                .search-attempts {
+                    @include media-breakpoint-down(md) {
+                        float: none;
+                        width: 75%;
+                        position: relative;
+
+                        input {
+                            width: 100%;
+                            padding-right: 75px;
+                        }
+
+                        span:not(.icon) {
+                            position: absolute;
+                            top: 0;
+                            padding: 7px 8px;
+
+                            &.clear-search {
+                                right: 0;
+                            }
+
+                            &.search {
+                                right: 33px;
+                            }
+                        }
+
+                        span {
+                            &:first-child {
+                                margin-right: 0;
+                            }
+
+                            &.icon {
+                                padding: 0;
+                            }
+                        }
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        width: 100%;
+                    }
+                }
+
+                .pagination {
+                    width: auto;
+
+                    @include media-breakpoint-down(md) {
+                        display: flex;
+                        float: none;
+                        margin-top: 10px;
+                        width: 100%;
+
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .ui-accordion .ui-accordion-content {
+                @include media-breakpoint-down(sm) {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+
+    .mce-window.mce-in {
+        @include media-breakpoint-down(sm) {
+            width: 460px !important;
+            max-width: calc(100% - 20px);
+            box-sizing: border-box;
+            left: 50% !important;
+            top: 50% !important;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            margin: 0 !important;
+            height: auto !important;
+
+            *:not(.mce-close):not(.mce-i-checkbox) {
+                position: static;
+                height: auto !important;
+                width: auto !important;
+            }
+
+            .mce-window-head {
+                position: relative !important;
+
+                .mce-close {
+                    border: none;
+                }
+            }
+
+            .mce-abs-layout,
+            .mce-foot {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .mce-foot {
+                display: flex;
+                justify-content: flex-end;
+
+                .mce-abs-layout {
+                    height: auto !important;
+                }
+            }
+
+            .mce-formitem {
+                margin-bottom: 10px;
+                padding: 0 10px;
+
+                & + .mce-last.mce-abs-layout-item .mce-formitem.mce-first {
+                    margin-top: 0;
+                }
+
+                &.mce-first {
+                    margin-top: 10px;
+                }
+
+                .mce-label.mce-first {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+
+                .mce-checkbox {
+                    margin-top: 5px;
+                }
+
+                .mce-combobox {
+                    display: block;
+                    width: 100% !important;
+                }
+
+                .mce-textbox {
+                    font-size: 14px;
+                    padding: 5px 10px;
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    &:not([size="3"]) {
+                        width: 100% !important;
+                        box-sizing: border-box;
+                    }
+
+                    & + .mce-label {
+                        margin: 0 5px;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+
+                .mce-listbox {
+                    width: 100% !important;
+
+                    button {
+                        width: 100% !important;
+                        border: 1px solid #c5c5c5 !important;
+                        position: relative !important;
+
+                        .mce-caret {
+                            position: absolute !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mce-window-head .mce-close {
+            padding: 1px 4px;
+            border-color: transparent;
+        }
+
+        .mce-foot {
+            .mce-abs-layout {
+                height: auto !important;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        }
+
+        .mce-btn:not(.mce-listbox) {
+            border: none !important;
+            background: none !important;
+            height: auto !important;
+            position: static !important;
+            display: inline-block;
+            vertical-align: middle;
+
+            & + .mce-btn {
+                margin-left: 5px;
+            }
+
+            &.mce-primary button {
+                width: 100% !important;
+                border: 1px solid $base-color !important;
+                color: $base-color;
+
+                &:hover,
+                &:focus {
+                    color: $white;
+                }
+            }
+        }
+
+        .mce-primary + .mce-last button {
+            border: 1px solid transparent;
+        }
+
+        .mce-listbox button {
+            border: 1px solid #c5c5c5 !important;
+            box-shadow: none;
+        }
+    }
+
+    .mce-floatpanel.mce-fixed {
+        @include media-breakpoint-down(sm) {
+            width: 440px !important;
+            max-width: calc(100% - 40px);
+            box-sizing: border-box;
+            left: 50% !important;
+            transform: translateX(-50%);
+        }
+    }
+
+    .slick-header-column.ui-state-default {
+        height: auto;
+    }
+}
+
+.content-wrapper div.gradebook-wrapper section.gradebook-content {
+    padding: 20px;
+
+    .student-table {
+        min-width: 125px;
+
+        a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+    }
+
+    .grades {
+        max-width: calc(100% - 125px);
+    }
+
+    .grade-table {
+        width: 100%;
+    }
+
+    .student-search {
+        @include media-breakpoint-down(md) {
+            padding: 0 5px;
+        }
+    }
+
+    input.student-search-field {
+        @include media-breakpoint-down(md) {
+            background-image: none;
+            padding-left: 15px;
+        }
+    }
+}

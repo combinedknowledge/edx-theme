@@ -1,0 +1,235 @@
+.view-teams.view-in-course {
+    a:visited:not(:hover):not(:focus) {
+        color: $base-color;
+    }
+
+    .page-content-nav .nav-item:hover {
+        text-shadow: none;
+    }
+
+    .action-primary,
+    .action-cancel,
+    .action-edit-team,
+    .action-remove-member {
+        border: 1px solid $m-blue-d3;
+        border-radius: 3px;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $uxpl-blue-hover-active;
+        }
+    }
+
+    .action-cancel:hover {
+        color: $white;
+    }
+
+    .action-edit-team {
+        padding: 10px 20px;
+
+        &:hover {
+            background: $uxpl-blue-hover-active !important;
+        }
+    }
+
+    .action-remove-member {
+        margin: 10px 0;
+        vertical-align: middle;
+
+        &:hover {
+            background: $uxpl-blue-hover-active;
+            color: $white;
+        }
+    }
+
+    .card {
+        @include media-breakpoint-down(sm) {
+            width: 48%;
+            margin: 20px .7%;
+        }
+
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .wrapper-card-core {
+            display: flex;
+            justify-content: space-between;
+
+            @include media-breakpoint-down(xs) {
+                flex-direction: column;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &.list-card {
+            .card-core {
+                width: auto;
+
+                @include media-breakpoint-down(xs) {
+                    width: 100%;
+                }
+            }
+
+            .card-actions {
+                width: auto;
+                text-align: right;
+
+                @include media-breakpoint-down(xs) {
+                    text-align: left;
+                    float: none;
+                }
+
+                .action-view {
+                    @include media-breakpoint-down(xs) {
+                        float: none;
+                    }
+                }
+            }
+        }
+
+        .card-title {
+            word-break: break-word;
+            white-space: normal;
+
+            @include media-breakpoint-up(sm) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .search-form {
+        display: flex;
+        justify-content: flex-end;
+
+        .action-search {
+            padding: 6px 10px;
+        }
+    }
+
+    .page-header {
+        .page-title {
+            word-break: break-word;
+        }
+
+        &.has-secondary {
+            .breadcrumbs {
+                word-break: break-word;
+
+                .icon:last-child {
+                    display: none;
+                }
+            }
+
+            .page-header-main {
+                width: 62%;
+                margin-right: 2%;
+                vertical-align: top;
+
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    margin: 0 0 15px;
+                }
+            }
+
+            .page-header-secondary {
+                width: 34%;
+                vertical-align: top;
+
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+
+            .form-actions {
+                margin-top: 0;
+
+                .action-primary,
+                .btn-secondary {
+                    margin: 0 0 5px;
+                }
+
+                .action-primary {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .teams-content .teams-main .team-edit-fields {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .team-required-fields,
+        .team-optional-fields {
+            width: 46%;
+            margin: 0 1%;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+
+        .team-required-fields .u-field {
+            margin-right: 0;
+        }
+
+        .team-optional-fields .u-field-value {
+            margin: 5px 0;
+        }
+
+        .vertical-line {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+
+    .team-profile {
+        display: flex;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+
+            .page-content-main,
+            .page-content-secondary {
+                width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+    }
+
+    .edit-members {
+        .member-profile {
+            vertical-align: top;
+        }
+
+        .member-info-container {
+            margin-right: 10px;
+
+            @include media-breakpoint-up(sm) {
+                overflow: hidden;
+                max-width: calc(100% - 80px);
+            }
+
+            .primary {
+                word-break: break-word;
+            }
+        }
+    }
+
+    .prompt.warning {
+        max-width: calc(100% - 20px);
+    }
+
+    .wrapper-msg {
+        max-width: 100%;
+    }
+}

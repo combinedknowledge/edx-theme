@@ -1,0 +1,47 @@
+.wrapper-course-material .course-material .course-tabs {
+    padding: 0;
+    display: flex;
+    overflow: auto;
+
+    .tab a {
+        &,
+        &:visited {
+            border-bottom-style: solid;
+            border-bottom-color: transparent;
+        }
+
+        &:hover,
+        &:focus,
+        &.active {
+            border-bottom-color: $base-color;
+        }
+    }
+}
+
+#main div.book-wrapper {
+    display: flex;
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+
+    section.book-sidebar {
+        width: 24%;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            border-radius: 0;
+            border-right: 1px solid #c8c8c8;
+        }
+    }
+
+    .book {
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+
+        iframe {
+            max-width: 100%;
+        }
+    }
+}
