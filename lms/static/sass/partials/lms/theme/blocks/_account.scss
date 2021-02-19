@@ -62,6 +62,13 @@
                     white-space: normal;
                 }
             }
+
+            .u-field-message {
+                .rtl & {
+                    padding-left: 0;
+                    padding-right: 80px;
+                }
+            }
         }
 
         .u-field-order-orderId .u-field-order {

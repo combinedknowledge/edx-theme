@@ -1,0 +1,8 @@
+#main div.book-wrapper section.book-sidebar {
+    background-color: $white;
+    margin-bottom: 4px;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+    }
+}

@@ -80,13 +80,28 @@
             padding-bottom: 40px;
         }
 
-        .wrapper-profile-section-container-two .profile-private-message {
-            line-height: normal;
-            padding-left: 0;
+        .wrapper-profile-section-container-two {
+            .u-field-title label,
+            .u-field-title span {
+                margin-right: 10px;
+            }
+
+            .profile-private-message {
+                line-height: normal;
+                padding-left: 0;
+            }
         }
     }
 
     .wrapper-profile {
         background: $body-bg;
+    }
+
+    &.rtl .profile .wrapper-profile-section-container-two .u-field-title {
+        label,
+        span {
+            margin-left: 10px;
+            margin-right: 0;
+        }
     }
 }

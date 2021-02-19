@@ -19,6 +19,14 @@
                 box-sizing: border-box;
                 overflow: hidden;
                 display: flex;
+
+                .search-input {
+                    border-radius: 3px 0 0 3px;
+                }
+
+                .search-button {
+                    border-radius: 0 3px 3px 0;
+                }
             }
 
             .search-field,
