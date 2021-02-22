@@ -8,6 +8,11 @@ from django.urls import reverse
 from openedx.core.djangolib.markup import HTML, Text
 %>
 
+<%block name="title">
+  <title>
+    ${_("{platform_name}").format(platform_name=static.get_platform_name())}
+  </title>
+</%block>
 <%block name="bodyclass">home</%block>
 
 <main id="main" aria-label="Content" tabindex="-1">
