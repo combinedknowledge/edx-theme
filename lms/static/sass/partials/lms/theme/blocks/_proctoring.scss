@@ -30,8 +30,12 @@
 }
 
 .verification-process {
-    .carousel #wrapper-review .review-task-photos .wrapper-photos {
-        .wrapper-photo {
+    .carousel #wrapper-review {
+        .review .payment-buttons {
+            padding-bottom: 15px;
+        }
+
+        .review-task-photos .wrapper-photos .wrapper-photo {
             @include media-breakpoint-down(xs) {
                 width: 100%;
                 float: none;
