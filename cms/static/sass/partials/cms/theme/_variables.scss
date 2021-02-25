@@ -1,0 +1,13 @@
+// our custom color and variables
+$base-color: #e9b414;
+$base-color-hover: darken($base-color, 20%);
+
+// overriding default values
+$theme-colors: ("primary": $base-color);
+$color-live: $base-color;
+$blue: $base-color;
+$blue-d1: $base-color;
+$uxpl-blue-hover-active: $base-color-hover;
+$blue-l3: $base-color-hover;
+
+@import "edx-bootstrap/sass/open-edx/theme";
