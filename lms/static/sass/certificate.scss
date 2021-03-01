@@ -43,6 +43,11 @@
         }
     }
 
+    .wrapper-about .about-item a,
+    .footer-app-nav .list .action {
+        color: $base-color;
+    }
+
     .accomplishment-rendering {
         top: 0;
     }

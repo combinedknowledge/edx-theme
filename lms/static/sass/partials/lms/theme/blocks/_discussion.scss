@@ -269,10 +269,19 @@
         }
     }
 
-    .forum-nav-thread-title {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    .forum-nav-thread {
+        &-title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &-link:hover {
+            .forum-nav-thread-title,
+            span.icon {
+                color: $base-color;
+            }
+        }
     }
 
     .search-alert {

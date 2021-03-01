@@ -67,7 +67,7 @@
                             </a>
                         </td>
                         <td align="right" style="text-align: {{ LANGUAGE_BIDI|yesno:"left,right" }};">
-                            <a class="login" href="{% with_link_tracking dashboard_url %}" style="color: #005686;">{%  trans "Sign In" %}</a>
+                            <a class="login" href="{% with_link_tracking dashboard_url %}" style="color: #c79500;">{%  trans "Sign In" %}</a>
                         </td>
                     </tr>
                 </table>
@@ -162,8 +162,8 @@
                         <td style="padding-bottom: 20px;">
                             {% for action_link_url, action_link_text in channel.action_links %}
                                 <p>
-                                    <a href="{{ action_link_url }}" style="color: #005686">
-                                        <font color="#005686"><b>{{ action_link_text }}</b></font>
+                                    <a href="{{ action_link_url }}" style="color: #c79500">
+                                        <font color="#c79500"><b>{{ action_link_text }}</b></font>
                                     </a>
                                 </p>
                             {% endfor %}
@@ -175,7 +175,7 @@
                             &copy; {% now "Y" %} {{ platform_name }}, {% trans "All rights reserved" as tmsg %}{{ tmsg | force_escape }}.<br/>
                             <br/>
                             {% trans "Our mailing address is" as tmsg %}{{ tmsg | force_escape }}:<br/>
-                            <a href="mailto:{{ contact_mailing_address }}">{{ contact_mailing_address }}</a>
+                            <a style="color: #c79500" href="mailto:{{ contact_mailing_address }}">{{ contact_mailing_address }}</a>
                         </td>
                     </tr>
                     {% if unsubscribe_url %}
