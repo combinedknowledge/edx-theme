@@ -139,6 +139,10 @@
                         flex-direction: column;
                         justify-content: space-between;
                         word-break: break-word;
+
+                        .course-info {
+                            padding-left: 0;
+                        }
                     }
 
                     .course-top-info,
