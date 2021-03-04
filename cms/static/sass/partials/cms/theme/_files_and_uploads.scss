@@ -1,0 +1,83 @@
+// TODO: Need to remove this file and change variable from Micro front end application
+// custom colors for the course page and files & uploads page
+
+div#root.SFE {
+    button.status-link,
+    a.status-link {
+        color: $base-color;
+    }
+
+    button.btn-outline-primary {
+        color: $base-color;
+        border-color: $base-color;
+
+        &:hover {
+            background-color: $base-color;
+            border-color: $base-color;
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active {
+            background-color: $base-color-hover;
+            border-color: $base-color-hover;
+        }
+    }
+
+    .page-item.active button.page-link {
+        background-color: $base-color;
+    }
+
+    button.btn-primary,
+    a.btn-primary {
+        background-color: $base-color;
+        border-color: $base-color;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: $base-color-hover;
+            border-color: $base-color-hover;
+        }
+    }
+
+    .checklist-item-complete:hover,
+    .checklist-item-incomplete:hover {
+        box-shadow: -5px 0 0 0 $base-color;
+    }
+
+    .checklist-item-incomplete:hover .checklist-icon-incomplete,
+    .btn-link {
+        color: $base-color;
+    }
+
+    .btn-link:hover {
+        color: $base-color-hover;
+    }
+
+    div.search-field {
+        &.focused {
+            border-color: $base-color !important;
+            box-shadow: 0 0 0 2px rgba(lighten($base-color, 20%), .25);
+        }
+
+        .search-btn:not(:disabled):focus,
+        .search-btn:not(:disabled):hover {
+            color: $base-color;
+            background: rgba($base-color, .2);
+
+            span {
+                background: none;
+            }
+        }
+    }
+
+    .btn.focus,
+    .btn:focus {
+        box-shadow: 0 0 0 .2rem rgba($base-color, .25);
+    }
+
+    input:focus {
+        border-color: lighten($base-color, 20%) !important;
+        box-shadow: 0 0 0 2px rgba(lighten($base-color, 20%), .25) !important;
+    }
+}
