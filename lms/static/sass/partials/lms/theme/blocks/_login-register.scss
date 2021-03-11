@@ -31,15 +31,23 @@
             }
         }
 
+        &.select-country,
+        &.select-gender,
+        &.select-year_of_birth,
+        &.select-level_of_education {
+            label:before,
+            label:after {
+                display: none;
+            }
+        }
+
         label.focus-out,
         input.focus-out,
         select.focus-out,
         textarea.focus-out {
-            @include media-breakpoint-down(xs) {
-                position: static;
-                padding: 0;
-                opacity: 1;
-            }
+            position: static;
+            padding: 0;
+            opacity: 1;
         }
     }
 
