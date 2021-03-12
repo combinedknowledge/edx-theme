@@ -63,6 +63,10 @@ body[class] {
     flex-flow: column nowrap;
     min-height: 100vh;
     overflow-x: hidden;
+
+    .view-in-course & {
+        overflow-x: visible;
+    }
 }
 
 .wrapper-preview-menu {
