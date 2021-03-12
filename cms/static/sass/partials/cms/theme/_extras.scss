@@ -21,6 +21,12 @@
 
 .view-library .wrapper-mast .mast.has-navigation .nav-actions {
     top: initial;
+
+    .button {
+        font-size: 12px;
+        line-height: 17px;
+        padding-bottom: ($baseline / 3);
+    }
 }
 
 // title color in a modal window
