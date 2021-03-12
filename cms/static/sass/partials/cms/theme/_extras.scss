@@ -22,3 +22,15 @@
 .view-library .wrapper-mast .mast.has-navigation .nav-actions {
     top: initial;
 }
+
+// title color in a modal window
+
+.wrapper-notification .copy .title,
+.wrapper-alert .copy .title,
+.prompt .copy .title {
+    color: $white;
+
+    span.fa-warning {
+        color: $red-l1;
+    }
+}
