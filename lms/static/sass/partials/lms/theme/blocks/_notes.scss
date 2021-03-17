@@ -31,9 +31,15 @@ body.view-student-notes {
         }
 
         .wrapper-note-excerpts .note-excerpt-more-link {
+            color: $link-hover;
             border: none;
             box-shadow: none;
             text-shadow: none;
+
+            &:hover,
+            &:focus {
+                color: $link-hover;
+            }
         }
     }
 
