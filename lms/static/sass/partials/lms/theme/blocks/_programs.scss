@@ -23,3 +23,46 @@
         @include simple($base-color);
     }
 }
+
+.program-details-wrapper {
+    .course-list-heading {
+        color: $base-color;
+    }
+
+    .program-details-header .authoring-organizations .heading {
+        color: $base-color;
+    }
+
+    .program-course-card .course-details .course-title .course-title-link {
+        color: $base-color;
+
+        &:visited {
+            color: $base-color;
+        }
+    }
+
+    .course-enroll-view .view-course-button {
+        background: $base-color;
+        border-color: $base-color;
+
+        &:hover {
+            background: $link-hover;
+            border-color: $link-hover;
+        }
+    }
+}
+
+.program-sidebar {
+    .divider-heading {
+        color: $base-color;
+    }
+
+    .sidebar-button-wrapper .sidebar-button {
+        background-color: $base-color;
+        color: $white;
+
+        &:hover {
+            background-color: $link-hover;
+        }
+    }
+}
