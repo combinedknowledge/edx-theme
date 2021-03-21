@@ -1,0 +1,5 @@
+deploy-dev:
+    stage: deploy
+    trigger: kraken/combined-knowledge/deployment
+    only:
+      - master
