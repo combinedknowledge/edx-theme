@@ -1,0 +1,19 @@
+footer.wrapper-footer {
+    .footer-nav-list .footer-nav-item {
+        margin: 0 15px;
+    }
+
+    .footer-support .logo-edx {
+        display: block;
+        height: 23px;
+        margin-left: 6px;
+        filter: grayscale(100%);
+        transition: all .2s ease;
+        opacity: .7;
+
+        &:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+    }
+}
