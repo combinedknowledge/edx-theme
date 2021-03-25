@@ -1,0 +1,120 @@
+header.global-header {
+    .nav-links {
+        .main .nav-item {
+            margin-left: 15px;
+
+            a {
+                text-transform: none;
+                font-weight: 600;
+            }
+        }
+
+        .secondary {
+            .nav-item {
+                .help-link,
+                .menu-title {
+                    color: $white;
+                    text-transform: none;
+                    font-weight: 600;
+                }
+
+                a.btn {
+                    font-weight: 500;
+                    font-size: 16px;
+                    background: $base-color;
+                    color: $white;
+                    padding: 5px 20px;
+
+                    &:hover {
+                        background: lighten($base-color, 20%);
+                        color: $white;
+                    }
+                }
+            }
+
+            .toggle-user-dropdown span {
+                color: $white;
+
+                &:hover {
+                    color: $base-color;
+                }
+            }
+
+            .dropdown-user-menu {
+                right: 22px;
+                padding: 5px;
+                border: none;
+                min-width: 120px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .3);
+
+                .dropdown-item a {
+                    text-transform: none;
+                    color: $base-color;
+                    font-size: 16px;
+                    padding: 5px 15px;
+
+                    &:hover {
+                        color: lighten($base-color, 20%);
+                    }
+                }
+            }
+        }
+    }
+
+    .course-header {
+        color: $white;
+    }
+}
+
+.home > header {
+    .outer-wrapper {
+        animation: none;
+        padding: 20px;
+
+        .course-search {
+            margin: 60px auto 0;
+
+            .search-input {
+                background: rgba($white, .25);
+                border: 2px solid $white;
+                font-size: 18px;
+                height: 43px;
+                color: $white;
+
+                &::placeholder {
+                    color: $white;
+                }
+            }
+
+            .search-button {
+                color: $white;
+            }
+        }
+    }
+
+    .title > .heading-group {
+        h1,
+        p {
+            font-family: $font-family-secondary;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            color: $white;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+
+            @include media-breakpoint-up(md) {
+                font-size: 52px;
+            }
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 28px;
+            font-style: normal;
+        }
+    }
+}

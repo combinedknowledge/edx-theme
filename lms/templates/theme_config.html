@@ -9,78 +9,47 @@ from openedx.core.djangolib.markup import HTML, Text
 data = {
   "footerIcons": {
     "facebook": {
-      "href": "#",
+      "href": "https://www.facebook.com/pages/Combined-Knowledge-Ltd/130405933644168",
       "src": "ico-facebook"
     },
     "twitter": {
-        "href": "#",
-        "src": "ico-twitter"
-    },
-    "instagram": {
-        "href": "#",
-        "src": "ico-instagram"
-    },
-    "linkedin": {
-        "href": "#",
-        "src": "ico-linkedin"
+      "href": "https://twitter.com/ckukltd",
+      "src": "ico-twitter"
     },
     "youtube": {
-        "href": "#",
-        "src": "ico-youtube"
+      "href": "http://www.youtube.com/user/combinedknowledge",
+      "src": "ico-youtube"
     },
-    "odnoklassniki": {
-        "href": "#",
-        "src": "ico-odnoklassniki"
-    },
-    "vimeo": {
-        "href": "#",
-        "src": "ico-vimeo"
-    },
-    "vk": {
-        "href": "#",
-        "src": "ico-vk"
-    },
-    "behance": {
-        "href": "#",
-        "src": "ico-behance"
-    },
-    "google-plus": {
-        "href": "#",
-        "src": "ico-google-plus"
+    "linkedin": {
+        "href": "http://www.linkedin.com/company/113488?trk=tyah&trkInfo=tarId%3A1400000150305%2Ctas%3ACombined%20K%2Cidx%3A1-1-1",
+        "src": "ico-linkedin"
     },
   },
   "footerLinks": {
     "about": {
-      "url": "/about",
+      "url": "https://www.combined-knowledge.com/about-us/",
       "text": Text(_('About')),
-      "target_blank": False
+      "target_blank": True
     },
     "privacy": {
-      "url": "/privacy",
+      "url": "https://www.combined-knowledge.com/privacy/",
       "text": Text(_('Privacy Policy')),
-      "target_blank": False
+      "target_blank": True
     },
     "terms": {
-      "url": "/tos",
-      "text": Text(_('Terms of Service')),
-      "target_blank": False
+      "url": "https://www.combined-knowledge.com/terms-and-conditions/",
+      "text": Text(_('Terms and Conditions')),
+      "target_blank": True
     },
-    "contact_us": {
-      "url": "/support/contact_us",
-      "text": Text(_('Contact Us')),
-      "target_blank": False
-    }
   },
   "banner": {
-    "title": Text(_("Welcome to {platform_name}")).format(
-        platform_name=helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
-    ),
-    "description": Text(_("It works! Powered by Open edX{registered_trademark}")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))
+    "title": Text(_("Training + Academy")),
+    "description": Text(_("Your productivity portal"))
   },
   "site_variable": settings.FEATURES.get('BASE_JUNIPER_SITE_THEME', settings.DEFAULT_SITE_THEME),
-  "header_logo": "logo.svg",
-  "footer_logo": "logo-footer.svg",
-  "certificate_logo": "logo-certificate.svg"
+  "header_logo": "logo.png",
+  "footer_logo": "footer-logo.png",
+  "certificate_logo": "logo.png"
 }
 return data
 %></%def>

@@ -1,0 +1,12 @@
+.courses-container .courses {
+    .courses-listing .course .course-info .course-title {
+        color: $base-color;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: none !important;
+    }
+
+    .course .course-image .cover-image:before {
+        background: rgba($black, .7);
+    }
+}
