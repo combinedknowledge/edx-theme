@@ -76,11 +76,14 @@
                     }
 
                     .course-organization,
-                    .course-code,
-                    .course-date {
+                    .course-code {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                    }
+
+                    .course-date {
+                        display: none;
                     }
                 }
 
