@@ -150,12 +150,13 @@
                         }
                     }
 
-                    .course-top-info,
+                    .course-top-info span {
+                        font-size: 14px;
+                        color: #474747;
+                    }
+
                     .info-date-block-container {
-                        span {
-                            font-size: 14px;
-                            color: #474747;
-                        }
+                        display: none;
                     }
                 }
 
